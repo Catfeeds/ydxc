@@ -1,0 +1,21 @@
+{/include file="header.html"/}
+	<body>
+	<!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->	
+	<div class="container">
+		{/if !empty({/$value.img1/})/}
+		<div class="row banner">
+			<img src="{/$value.img1/}"/>
+		</div>
+		{//if/}
+		
+		<div  class="row new-text">
+			<div class="col-xs-12">
+					{/$value.content/}	
+			</div>
+
+		</div>
+		
+	</div>	
+		
+	</body>
+</html>

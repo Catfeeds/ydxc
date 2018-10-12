@@ -1,0 +1,50 @@
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<a class="map-dh" {/if !empty($cd_info.id)/} href="/index.php?do=go&id={/$cd_info.id/}"{//if/}>
+							<i class="iconfont icon-quzheli"></i>
+							<p>到这里</p>
+					</a>
+				</div>
+			</div>
+			<div class="row location">
+				<div class="col-xs-12">
+					<h2>{/$cd_info.title/}</h2>
+					<p>{/$cd_info.cd_address/}</p>
+				</div>
+			</div>
+			
+			<div class="row trainer">
+					<div class="col-xs-12 trainer-name" style="height: 200px; overflow: scroll;">
+						{/foreach from=$coach item=item/}
+						<a href="/index.php?do=coach_details&id={/$item.id/}" class="col-xs-12">
+							<div class="trainer-summary">
+								<img src="{/$item.img/}"/>
+								<div>
+									<h3 style="width: 64px;">{/$item.xingming/}</h3><span>{/$item.drive_type/}{/if empty($item.kemu)/}{/else/}/科{/$item.kemu/}{//if/}</span>
+									<p>{/$cd_info.title/}</p>
+								</div>
+							</div>
+							
+							{/if $item.avg==0/}
+							<h2 style="float: right;">暂无评分</h2>
+							{/else/}
+							<div class="coach-star coach-star-{/$item.avg/} right">
+										<i class="iconfont icon-xing"></i>
+										<i class="iconfont icon-xing"></i>
+										<i class="iconfont icon-xing"></i>
+										<i class="iconfont icon-xing"></i>
+										<i class="iconfont icon-xing"></i>
+							</div>
+							{//if/}
+						</a>	
+						{//foreach/}
+					</div>
+				</div>	
+			
+			{/if count($coach)>10/}
+				<div class="row see">
+					<a href="/index.php?do=xlc_map_ajax&id={/$cd_info.id/}&k={/$k/}&p=2">查看更多</a>
+				</div>
+			{//if/}
+		</div>

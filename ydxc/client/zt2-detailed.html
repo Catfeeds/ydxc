@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no" />
+        <title>参与最美形象代言人选拔，赢1万奖金50万创业资金。</title>
+        <meta name="description" content="国内首家智能化学车平台盛大起航。" />
+        <meta name="keywords" content="国内首家智能化学车平台盛大起航。" />
+        <meta name="author" content="国内首家智能化学车平台盛大起航。" />
+        <link rel="stylesheet" type="text/css" href="old/css/self/reset.css" />
+        <link rel="stylesheet" type="text/css" href="public/css/libs/swiper-3.4.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="old/css/self/custom.css" />
+    </head>
+
+    <body ontouchstart>
+        <!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+
+        <div class="page detailed" id="userinfo">
+            <div class="swiper-container js-swiper-container-index">
+                <div class="swiper-wrapper" id="tplist">
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination js-swiper-pagination-index"></div>
+            </div>
+            <div class="detailed-attr">
+                <span class="detailed-attr-icon-1"><i>姓名</i>迪丽热巴</span>
+                <!--<span class="detailed-attr-icon-2"><i>编号</i>KJ0001</span>-->
+                <span class="detailed-attr-icon-3"><i>人气</i>9999999</span>
+                <span class="detailed-attr-icon-4"><i>名次</i>1</span>
+                <span class="detailed-attr-icon-8"><i>学校</i>重庆交通大学</span>
+            </div>
+            <div class="detailed-gift">
+                <div class="detailed-gift-hd">
+                    <h2>加人气</h2>
+                </div>
+                <div class="clearfix detailed-gift-bd">
+                    <span class="detailed-gift-item detailed-gift-item-4 js-detailed-gift-item " data-dialog-name="迪丽热巴" data-dialog-type="+1人气" data-dialog-price="99.9"><i>+1人气</i></span>
+                </div>
+            </div>
+        </div>
+
+        <script src="public/js/libs/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/libs/swiper-3.4.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/self/custom.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            if (/Android/gi.test(navigator.userAgent)) {
+                $('body').addClass('js-android');
+            }
+            $(function () {
+            		$.getUrlParam = function (name) {
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                    var r = window.location.search.substr(1).match(reg);
+                    if (r != null) return unescape(r[2]); return null;
+                }
+            	
+                $('body').on('click', '.js-payment-dialog-btn-cancel', function () {
+                    $('.js-payment').remove();
+
+                });
+                
+                getuserinfo();
+            });
+            
+            
+            function getuserinfo() {
+            		$("#userinfo").html('加载中...');
+
+            		var id = $.getUrlParam('id');
+            		$.ajax({
+					type: 'GET',
+					url: '/s_user/user.php?method=getuser&id='+id,
+					dataType: 'json',
+					success: function(data){
+						//if (1 == data.code) {
+							var html = "";
+							$.each(data.content, function(index, item) {
+								var tphtml = "";
+								var tp = item.zp.split(",");// 在每个逗号(,)处进行分解。;
+								$.each(tp, function(index, itp) {
+									if (itp != "" && null != itp && 'NULL' != itp) {
+										var ifolder = itp.substring(0,29);
+										var name = itp.substring(29);
+										tphtml += '<div class="swiper-slide">'+
+							                        '<a href="javascript:void();"><img src="'+ifolder+"s_"+name+'" /></a>'+
+							                        //'<a href=""><img src="'+itp+'" /></a>'+
+							                   '</div>';
+									}
+								});
+								//$("#tplist").html(tphtml);
+								html = '<div class="swiper-container js-swiper-container-index">'+
+							                '<div class="swiper-wrapper">'+
+							                   tphtml +
+							                '</div>'+
+							                '<!-- Add Pagination -->'+
+							                '<div class="swiper-pagination js-swiper-pagination-index"></div>'+
+							            '</div>'+
+            								'<div class="detailed-attr">'+
+							                '<span class="detailed-attr-icon-1"><i>姓名</i>'+item.xm+'</span>'+
+							                '<span class="detailed-attr-icon-3"><i>人气</i>'+item.rq+'</span>'+
+							                '<!--<span class="detailed-attr-icon-4"><i>名次</i>1</span>-->'+
+							                '<span class="detailed-attr-icon-8"><i>学校</i>'+item.school+'</span>'+
+							            '</div>'+
+							            '<div class="detailed-gift">'+
+							                '<div class="detailed-gift-hd">'+
+							                    '<h2>为<i>'+item.xm+'</i>加人气</h2>'+
+							                '</div>'+
+							                '<div class="clearfix detailed-gift-bd">'+
+							                		'<span class="detailed-gift-item detailed-gift-item-4 js-detailed-gift-item " data-dialog-name="'+item.xm+'" data-dialog-type="+1人气" data-dialog-price="99.9"><i>+1人气</i></span>'+
+							                '</div>'+
+							            '</div>';
+							});
+							$("#userinfo").html(html);
+							$('.js-detailed-gift-item').on({
+			                    click: function () {
+			                        var _attr = {
+			                            name: $(this).data('dialog-name'),
+			                            type: $(this).data('dialog-type'),
+			                            price: $(this).data('dialog-price')
+			                        }
+			                        paymentDialog(_attr);
+			                    }
+			               });
+			               var swiper = new Swiper('.js-swiper-container-index', {
+						        pagination: '.js-swiper-pagination-index',
+						        autoplay: 3000,
+						        autoplayDisableOnInteraction: false,
+						        observer:true,//修改swiper自己或子元素时，自动初始化swiper
+    								//observeParents:true,//修改swiper的父元素时，自动初始化swiper
+						    });
+						/*}else if (-1 == data.code) {
+							//window.location.href="/client/getinfo.php";
+						}*/
+					},
+					error:function(data) {
+						//layer.msg('删除失败!',{icon:1,time:1000});;
+					},
+				});
+            }
+            
+           function paymentDialog(option) {
+                    var option = option || {};
+                    var _html = '<div class="page payment js-payment">';
+                    _html += '<div class="payment-dialog">';
+                    _html += '<div class="payment-dialog-bd">赠送给<i class="js-payment-dialog-name">' + option.name + '</i><i class="js-payment-dialog-type">' + option.type + '</i></div>';
+                    _html += '<div class="payment-dialog-ft">';
+                    _html += '<a class="payment-dialog-btn-cancel js-payment-dialog-btn-cancel" href="javascript:void(0)">取消</a>';
+                    _html += '<a class="payment-dialog-btn-confirm js-payment-dialog-btn-confirm" href="javascript:addrq()">确定</a>';
+                    _html += '</div>';
+                    _html += '</div>';
+                    _html += '</div>';
+                    $('body').append(_html);
+            }
+            
+           	function addrq() {
+           		alert('活动已经结束！');
+           		return false;
+           		$.ajax({
+					type: 'GET',
+					url: '/s_user/tp.php?method=addrq&touid='+$.getUrlParam('id'),
+					dataType: 'json',
+					success: function(data){
+						//alert(data);
+						if (-1 == data.code) {
+							localStorage.hurl = window.location.href;
+							window.location.href="/client/getinfo.php";
+						} else {
+							localStorage.hurl = "";
+							alert(data.msg);
+							location.reload();
+						}
+					},
+					error:function(data) {
+						//layer.msg('删除失败!',{icon:1,time:1000});;
+					},
+				});
+           	}
+        </script>
+
+    </body>
+
+</html>

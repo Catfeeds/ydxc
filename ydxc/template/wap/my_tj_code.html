@@ -1,0 +1,16 @@
+{/include file="header.html"/}
+	<body>
+		<!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+		<div class="container">
+			{/foreach from=$tj_news item=item/}
+			<div class="row info">
+				<p class="col-xs-12">{/date("Y-m-d H:i:s",$item.inputtime)/}</p>
+				<div class="col-xs-12">
+					<p>{/$item.content/}</p>
+				</div>
+			</div>
+			{//foreach/}
+		</div>
+		
+	</body>
+</html>

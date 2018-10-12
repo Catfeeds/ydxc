@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no" />
+        <title>参与最美形象代言人选拔，赢1万奖金50万创业资金。</title>
+        <meta name="description" content="国内首家智能化学车平台盛大起航。" />
+        <meta name="keywords" content="国内首家智能化学车平台盛大起航。" />
+        <meta name="author" content="国内首家智能化学车平台盛大起航。" />
+        <link rel="stylesheet" type="text/css" href="old/css/self/reset.css" />
+        <link rel="stylesheet" type="text/css" href="old/css/self/custom.css" />
+        <style type="text/css">
+            body {
+                background-color: #0C0A0A;
+                padding: 0 15px;
+            }
+        </style>
+    </head>
+
+    <body ontouchstart>
+        <!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+
+        <!--<div class="page home">-->
+            <div class="banner">
+                <img src="public/static/zt_2_banner.jpg" />
+            </div>
+            <div class="row-wrap date">
+                <div class="row-hd row-hd-2">
+                    <h2>活动时间</h2>
+                </div>
+                <div class="row-bd">
+                    <p><span>微信投票时间：即日起-9月30日</span></p>
+                    <p><span>总决赛时间：2017年10月中旬(具体时间由主办方另行通知)</span></p>
+                </div>
+            </div>
+            <div class="search">
+                <input type="search" name="" id="keyword" value="" placeholder="请输入编号或姓名" />
+                <button onclick="getuserlist();">搜索</button>
+            </div>
+            <div class="search">
+                <a href="zt2-form.html">我要报名</a>
+            </div>
+            <div class="row-wrap">
+                <div class="row-hd row-hd-2">
+                    <h2>参赛选手</h2>
+                </div>
+                <div class="row-bd">
+                    <div class="row contestant" id="phb">
+                        <div class="col-xs-6 contestant-item-wrap">
+                            <div class="contestant-item">
+                                <img src="public/static/test.jpg" />
+                                <div class="contestant-item-info">
+                                    <p>
+                                        <span class="contestant-name">刘文辉</span>
+                                        <span class="contestant-number">编号：00000</span>
+                                    </p>
+                                    <p>
+                                        <span class="contestant-type">学校：重庆交通大学</span>
+                                        <span class="icon-1 contestant-value">999999999</span>
+                                    </p>
+                                    <p>
+                                        <a class="contestant-go" href="zt2-detailed.html">加人气</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row contestant-pagination" id="pagelist">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row-wrap about">
+                <div class="row-hd row-hd-1">
+                    <h2>最美形象代言人活动简介</h2>
+                </div>
+                <div class="row-bd">
+                    <section class="about-item">
+                        <h2>活动对象</h2>
+                        <p>1、初赛海选对象：全重庆所有高校的17~30岁公民均可参加。社会人士征集4人（男女各两人）</p>
+                        <p>2、投票选择出得票最高的10名选手晋级决赛。</p>
+                    </section>
+                    <section class="about-item">
+                        <h2>活动阶段</h2>
+                        <p>1、7.1-7.15报名筛选阶段</p>
+                        <p>2、7.16-9.30微信投票阶段</p>
+                        <p>3、总决赛：具体活动时间以主办方通知为准</p>
+                    </section>
+                    <section class="about-item">
+                        <h2>参赛途径</h2>
+                        <p style="text-indent: 2em;">点击主题活动链接或者扫二维码关注易点学车公众号或鼎吉驾校公众号，点击“寻找最美形象代言人”活动，进入活动主题页面，报名成功后，我们将会有工作人员在2个工作日内联系您收集信息，请保持手机畅通，耐心等待，谢谢。</p>
+                    </section>
+                    <section class="about-item">
+                        <h2>初赛规则</h2>
+                        <p>1、先关注易点学车公众号或鼎吉驾校公众号然后进入活动页面开始投票，每人每天可投三票；</p>
+                        <p>2、投票时间为2017年7月1日00：00~2017年9月30日24：00；</p>
+                        <p>3、报名需提交真实照片，虚假的照片和报名信息视为无效，同一人不可重复报名，一个授权号仅有一个报名名额；</p>
+                        <p>4、投票结束后，10月1日将在微信公众平台公布名次，获得票数最高的前十名男神和女神将晋级10月中旬举办的决赛；</p>
+                        <p>5、本次海选投票不设置评委，由粉丝投票决定晋级选手；</p>
+                    </section>
+                    <section class="about-item">
+                        <h2>决赛规则</h2>
+                        <p>1、投票数量排名占比总分70%，决赛现场投票及才艺表演占比总分30%；</p>
+                        <p>2、决赛时间：2017年10月中旬，具体时间另行通知；</p>
+                        <p>3、决赛地点：大学城；</p>
+                        <p>4、10名选手每名准备一个2分钟以内的自我介绍VCR；</p>
+                        <p>5、每名选手准备一个五分钟内的才艺展示，形式不限，歌舞小品等均可，亦可请外援配合表演（自己必须上台）；</p>
+                        <p>6、本次决赛由5人专业评委打分，由评委对每位选手进行打分，去掉一个最高分，一个最低分，最后取平均分。决出一男一女两名形象代言人，亚军、季军各一名</p>
+                    </section>
+                    <section class="about-item">
+                        <h2>主办方与协办方</h2>
+                        <p>1.主办方</p>
+                        <p><span>易点学车平台</span>、<span>鼎吉驾校</span></p>
+                        <p>2.协办方</p>
+                        <p><span>重庆豪斯特实业股份有限公司</span>、<span>重庆鼎吉汽车销售有限公司</span>、<span>重庆鼎吉广告传媒有限公司</span>、<span>重庆顶级科技有限公司</span></p>
+                    </section>
+                    <section class="about-item">
+                        <h2>奖项设置</h2>
+                        <div>
+                            <h3>冠军：最美形象代言人（1人）</h3>
+                            <p>1、获得易点学车10000元奖金大奖</p>
+                            <p>2、两年内将获得集团公司创业项目50万专项基金</p>
+                            <p>3、成为中国首家智能学车平台——易点学车最美形象代言人</p>
+                            <p>4、毕业可直接进入集团公司成为高层领导助理，月薪不低于1万</p>
+                            <p>5、进入易点官网或公众平台形象展示</p>
+                            <p>6、参与公司年度广告宣传</p>
+                            <p>7、2017年公司线下活动全参与</p>
+                        </div>
+                        <div>
+                            <h3>季军、亚军（各1人）</h3>
+                            <p>1、获奖者免费学车</p>
+                            <p>2、最美形象代言人活动奖杯</p>
+                            <p>3、可获得创业指导和资金投资</p>
+                        </div>
+                    </section>
+                    <section class="about-item">
+                        <h2>郑重声明</h2>
+                        <p>本次活动目的以全面倡导学驾人弘扬交通安全文明驾驶为主题，以人工智能提升传统驾培培训质量为出发点。号召全社会人士关注驾培行业通过科技手段提升培训标准，提升学驾人对安全文明驾驶的参与感和敬畏感，通过智能化学车模式的深入，定制出中国好司机。</p>
+                        <p>严厉杜绝任何利用网络作弊投票行为，活动过程中如果发现票数异常，我们有权不经过参赛者允许进行删除，但是我们会保留相关证据，也希望大家积极举报有关恶意刷票行为，我们将会严肃处理。</p>
+                        <p>1、参赛者需提供自己的真实照片，若盗用或冒用他人名义照片的参赛行为，我司有权直接取消参赛人参赛资格；</p>
+                        <p>2、一旦参赛，本活动及活动以后主办方将拥有参赛者照片及相关素材的合法使用资格授权，不再另行协议；</p>
+                        <p>3、对蓄意诽谤、破坏、干扰活动的恶意言论及行为，我司将诉诸法律手段维护本次活动的合法权益；</p>
+                        <p>4、我们将采用高科技手段监控投票数据，一切形式的作弊投票，一经发现，我司有权直接取消参赛者参赛资格，希望大家踊跃报名，积极参赛；</p>
+                        <p>5、本活动公平、公正、公开，欢迎监督，但对诋毁造谣之言论将追究法律责任。</p>
+                        <p><strong>注：本活动最终解释权归重庆翼点信息科技有限公司所有</strong></p>
+                    </section>
+                </div>
+            </div>
+        <!--</div>-->
+
+        <script src="public/js/libs/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/libs/swiper-3.4.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/self/custom.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            var _page = 1;
+            var _total = 0;
+            var _pagesize = 1;
+            $(function () {
+                getuserlist();
+            });
+            //获取排行榜
+            function getuserlist() {
+                $("#phb").html('<div class="search-nodata">对不起，没有找到相关记录！</div>');
+                var keyword = $("#keyword").val();
+                $.ajax({
+                    type: 'GET',
+                    url: '/s_user/user.php?method=getuserlist&page=' + _page + '&keyword=' + keyword,
+                    dataType: 'json',
+                    success: function (data) {
+
+                        if (1 == data.code) {
+                            var html = "";
+                            var tp = "";
+                            _total = data.content.page.total;
+                            _pagesize = data.content.page.pagesize;
+                            $.each(data.content.list, function (index, item) {
+                                tp = item.zp.split(","); // 在每个逗号(,)处进行分解。
+                                tp = tp[0];
+                                var ifolder = tp.substring(0, 29);
+                                var name = tp.substring(29);
+                                var tpurl = ifolder + "s_" + name;
+
+                                html += '<div class="col-xs-6 contestant-item-wrap">' +
+                                    '<div class="contestant-item">' +
+                                    '<img src="' + tpurl + '" />' +
+                                    '<div class="contestant-item-info">' +
+                                    '<p>' +
+                                    '<span class="contestant-name">' + item.xm + '</span>' +
+                                    '<span class="contestant-number">编号：' + item.nums + '</span>' +
+                                    '</p>' +
+                                    '<p>' +
+                                    '<span class="contestant-type">学校：' + item.school + '</span>' +
+                                    '<span class="icon-1 contestant-value">' + item.rq + '</span>' +
+                                    '</p>' +
+                                    '<p>' +
+                                    '<a class="contestant-go" href="zt2-detailed.html?id=' + item.id + '">加人气</a>' +
+                                    '</p>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>';
+                            });
+                            $("#phb").html(html);
+                				pagec();
+                        } else if (-1 == data.code) {
+                            //alert('投票结束');
+                            //window.location.href="/client/tip.html";
+                        }
+                    },
+                    error: function (data) {
+                        //layer.msg('删除失败!',{icon:1,time:1000});;
+                    },
+                });
+            }
+
+            //分页处理
+            function pagec() {
+                if (_total <= 0) {
+                    return;
+                }
+                var pagehtml = '';
+                var prev = '	<a class="contestant-pagination-prev" href="javascript:_page--;getuserlist();">上一页</a>';
+                var nextpage = '<a class="contestant-pagination-next" href="javascript:_page++;getuserlist();">下一页</a>';
+                if (_page > 1) {
+                    pagehtml += prev;
+                }
+
+                //分页前后取10页
+                var qi = 0;
+                for (q = _page; q > 0; q--) {
+                    qi++;
+                    if (qi > 3) {
+                        break;
+                    }
+                }
+
+                var hi = 0;
+
+                for (h = _page; h < Math.ceil(_total / _pagesize); h++) {
+                    hi++;
+                    if (hi > 6 - qi) {
+                        break;
+                    }
+                }
+
+                if (hi + qi < 6) {
+                    qi = 0;
+                    for (q = _page; q > 0; q--) {
+                        qi++;
+                        if (qi > 6 - hi) {
+                            break;
+                        }
+                    }
+                }
+
+                for (j = q + 1; j <= h; j++) {
+                    if (j == _page) {
+                        pagehtml += '<span>' + j + '</span>';
+                    } else {
+                        pagehtml += '<a href="javascript:_page=' + j + ';getuserlist();">' + j + '</a>';
+                    }
+                }
+
+                if (_page < Math.ceil(_total / _pagesize)) {
+                    pagehtml += nextpage;
+                }
+                $('#pagelist').html(pagehtml);
+            }
+        </script>
+    </body>
+
+</html>

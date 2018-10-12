@@ -1,0 +1,23 @@
+{/include file="header.html"/}
+	<body>
+		<!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+		<div class="container">
+			{/foreach from=$orders item=item/}
+			<div class="row order">
+				<div class="col-xs-12 order-number">
+					<p>订单编号：<span>{/$item.sn/}</span></p>
+				</div>
+				<div class="col-xs-12 order-detail">
+					<p>学车类型：<span>{/$item.class_name/}</span></p>
+					<p>学车场地：<span>{/$item.title/}</span></p>
+					<p>陪练教练：<span>{/$item.xingming/}</span></p>
+					<p>下单时间：<span>{/date("Y-m-d H:i:s",$item.paydate)/}</span></p>
+				</div>
+				<div class="col-xs-12 order-price">
+					<div class="right">价格 <span>￥{/$item.money/}</span></div>
+				</div>
+			</div>
+			{//foreach/}
+		</div>
+	</body>
+</html>

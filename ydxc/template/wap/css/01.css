@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+.body{margin:0px;
+padding:0px;
+border:0px;}
+.box{width:640px;
+}
+.box1{width:640px;
+height:1136px;
+background:url(../images/images/bj_02.jpg);
+background-repeat:no-repeat;}
+.daohang{background:#af251c;
+width:640px;
+height:58px;}
+.fanhui{width:66px;
+height:56px;
+padding-bottom:8px;
+padding-left:24px;
+padding-right:0px;
+padding-top:8px;}
+.shouye{
+padding-bottom:8px;
+padding-left:2px;
+padding-right:0px;
+padding-top:6px;}
+.logo{width:88px;
+height:106px;
+padding-bottom:0px;
+padding-left:20px;
+padding-right:0px;
+padding-top:76px;
+float:left;}
+.zi{width:434px;
+height:180px;
+padding-bottom:0px;
+padding-left:24px;
+padding-right:0px;
+padding-top:84px;
+float:left;}
+.lianxi font{
+	font-size:25px;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no" />
+        <title>合伙人【易点学车】</title>
+        <meta name="description" content="Yan" />
+        <meta name="keywords" content="Yan" />
+        <meta name="author" content="Yan" />
+        <link rel="stylesheet" type="text/css" href="public/css/self/reset.css" />
+        <link rel="stylesheet" type="text/css" href="public/css/libs/swiper-3.4.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="public/css/self/custom.css" />
+    </head>
+
+    <body ontouchstart>
+        <!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+		<form action="" method="post" id="useradd">
+        <div class="container zt3">
+            <div class="row form">
+                <div class="col-xs-12">
+                    <div class="form-item">
+                        <input type="text" name="xm" id="xm" value="" placeholder="请输入姓名" />
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-item">
+                        <input type="text" name="phone" id="phone" value="" placeholder="请输入手机号" />
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-item">
+                        <input type="text" name="school" id="school" value="" placeholder="请输入所在学校" />
+                    </div>
+                </div>
+                <!--<div class="col-xs-12">
+                    <div class="form-item-file-wrap clearfix">
+                        <div class="form-item form-item-file">
+                            <div class="form-item-file-cover">
+                                <img src="public/static/test.jpg" />
+                            </div>
+                            <h3 class="form-item-file-cover-dele">删除</h3>
+                        </div>
+                        <div class="form-item form-item-file">
+                            <div class="form-item-file-cover">
+                                <img src="public/static/test.jpg" />
+                            </div>
+                            <h3 class="form-item-file-cover-dele">删除</h3>
+                        </div>
+                        <div class="form-item form-item-file">
+                            <div class="form-item-file-upload">
+                                <img src="public/static/bg_upload.jpg" />
+                                <input type="file" id="" value="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+            <div class="row explain">
+                <div class="col-xs-12">
+                    <h2>郑重声明</h2>
+                    <p>本次活动目的以全面倡导学驾人弘扬交通安全文明驾驶为主题，以人工智能提升传统驾培培训质量为出发点。号召全社会人士关注驾培行业通过科技手段提升培训标准，提升学驾人对安全文明驾驶的参与感和敬畏感，通过智能化学车模式的深入，定制出中国好司机。</p>
+                    <p>严厉杜绝任何利用网络作弊投票行为，活动过程中如果发现票数异常，我们有权不经过参赛者允许进行删除，但是我们会保留相关证据，也希望大家积极举报有关恶意刷票行为，我们将会严肃处理。</p>
+                    <p>1、参赛者需提供自己的真实照片，若盗用或冒用他人名义照片的参赛行为，我司有权直接取消参赛人参赛资格；</p>
+                    <p>2、一旦参赛，本活动及活动以后主办方将拥有参赛者照片及相关素材的合法使用资格授权，不再另行协议；</p>
+                    <p>3、对蓄意诽谤、破坏、干扰活动的恶意言论及行为，我司将诉诸法律手段维护本次活动的合法权益；</p>
+                    <p>4、我们将采用高科技手段监控投票数据，一切形式的作弊投票，一经发现，我司有权直接取消参赛者参赛资格，希望大家踊跃报名，积极参赛；</p>
+                    <p>5、本活动公平、公正、公开，欢迎监督，但对诋毁造谣之言论将追究法律责任。</p>
+                    <p><strong>注：本活动最终解释权归重庆翼点信息科技有限公司所有</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="fix-btn">
+            <a class="fix-btn-call" href="tel:4006898909"><span>咨询热线</span><span>400-6898-909</span></a>
+            <a class="fix-btn-go" href="javascript:useradd()">提交报名</a>
+        </div>
+		</form>
+        <script src="public/js/libs/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/libs/swiper-3.4.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/self/custom.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+        		//提交报名
+        		function useradd() {
+        			$.ajax({
+					type: 'POST',
+					url: '/s_user/user.php?method=adduser',
+					data:$("#useradd").serialize(),
+					dataType: 'json',
+					success: function(data){
+						//alert(data);
+						if (data.code) {
+							alert(data.msg);
+							window.location.href = "zt2.html";
+						} else {
+							alert(data.msg);
+						}
+					},
+					error:function(data) {
+						//layer.msg('删除失败!',{icon:1,time:1000});;
+					},
+				});
+        		}
+        </script>
+    </body>
+
+</html>

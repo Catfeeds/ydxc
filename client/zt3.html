@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no" />
+        <title>成为合伙人</title>
+        <meta name="description" content="国内首家智能化学车平台盛大起航。" />
+        <meta name="keywords" content="国内首家智能化学车平台盛大起航。" />
+        <meta name="author" content="国内首家智能化学车平台盛大起航。" />
+        <link rel="stylesheet" type="text/css" href="public/css/self/reset.css" />
+        <link rel="stylesheet" type="text/css" href="public/css/libs/swiper-3.4.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="public/css/self/custom.css" />
+    </head>
+
+    <body ontouchstart>
+        <!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+		<form action="" method="post" id="useradd">
+        <div class="container zt3">
+            <div class="row form">
+                <div class="col-xs-12">
+                    <div class="form-item">
+                        <input type="text" name="xm" id="xm" value="" placeholder="请输入姓名" />
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-item">
+                        <input type="text" name="phone" id="phone" value="" placeholder="请输入手机号" />
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-item">
+                        <input type="text" name="school" id="school" value="" placeholder="请输入所在学校" />
+                    </div>
+                </div>
+            </div>
+            <div class="row explain">
+                <div class="col-xs-12">
+                    <h2>活动规则<strong>(请仔细阅读以下活动规则)</strong></h2>
+                    <p>
+                        <i>一、活动主题</i>
+                        <i>关注最美形象大使招募，投票心仪对象，成为智能化学车平台事业合伙人，霸道总裁就是您！</i>
+                    </p>
+                    <p>
+                        <i>二、报名时间</i>
+                        <i>2017年7月1日起</i>
+                    </p>
+                    <p>
+                        <i>三、活动规则</i>
+                        <i>1、所有高校大学生均可报名参与智能学车平台，通过审核成为事业合伙人。</i>
+                        <i>2、参与智能学车，定制中国好司机。</i>
+                        <i>3、成为事业合伙人，成为霸道总裁不是梦。</i>
+                        <i>4、我们需要强者和对未来有目标的您，男女不限，这里可以让您得到高额报酬、给您成长空间、获得创业资金、成为股东一切都不是梦想，我们一直在寻找牛B的您！</i>
+                        <i>5、凡参与最美形象代言人投票及参与预存学费活动分享朋友圈集赞50个，即可换取智能化学车平台精美礼品一份，仅限前100名，送完即止。</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="fix-btn">
+            <a class="fix-btn-call" href="tel:4006898909"><span>咨询热线</span><span>400-6898-909</span></a>
+            <a class="fix-btn-go" href="javascript:userpartner()">提交报名</a>
+        </div>
+		</form>
+
+        <script src="public/js/libs/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/libs/swiper-3.4.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/self/custom.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+        		//提交报名
+        		function userpartner() {
+        			$.ajax({
+					type: 'POST',
+					url: '/s_user/partner.php?method=add',
+					data:$("#useradd").serialize(),
+					dataType: 'json',
+					success: function(data){
+						//alert(data);
+						if (data.code) {
+							alert(data.msg);
+							window.location.href = "zt3.html";
+						} else {
+							alert(data.msg);
+						}
+					},
+					error:function(data) {
+						//layer.msg('删除失败!',{icon:1,time:1000});;
+					},
+				});
+        		}
+        </script>
+    </body>
+
+</html>

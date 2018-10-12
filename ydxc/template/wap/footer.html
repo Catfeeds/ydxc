@@ -1,0 +1,14 @@
+			<div class="footer">
+				<a {/if ($_GET['do']=='') /}class="col-xs-4 active"{/else/}class="col-xs-4"{//if/} href="/index.php">
+					<i class="iconfont icon-fangxiangpan"></i>
+					<p>首页</p>
+				</a>
+				<a {/if ($_GET['do']=='xlc_map') /}class="col-xs-4 active"{/else/}class="col-xs-4"{//if/} {/if $user_info.k2_status==2&&$comment_num==0/}onclick="cancel_turn();return false"{//if/} href="/index.php?do=xlc_map&k=2">
+					<i class="iconfont icon-baoming"></i>
+					<p>报名</p>
+				</a>
+				<a {/if ($_GET['do']=='center') /}class="col-xs-4 active"{/else/}class="col-xs-4"{//if/} href="/index.php?do=center">
+					<i class="iconfont icon-wode"></i>
+					<p>我的</p>
+				</a>
+			</div>

@@ -1,0 +1,46 @@
+{/include file="header.html"/}
+	<body>
+		<!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+		<div class="container">
+			<div class="data">
+				
+			
+			<div class="info-text">
+				<textarea name="content" id="content" rows="6" style="width: 90%;" placeholder="请填写想更换的教练和理由"></textarea>
+			</div>
+			
+			<div class="kong"></div>
+			
+			<div class="application-btn" style="margin: 0px; padding: 0px;">
+				<a href="javascript:dr_submit();" class="col-xs-12">提交</a>
+			</div>
+			
+		</div>
+	<script>
+		function dr_submit() {
+			var content = $('#content').val().trim();
+			if(content==null||content==''){
+				alert('内容不能为空');
+			} else {
+				$.ajax({
+					type:"post",
+					url:"/index.php?do=coach_change&action=add",
+					async:true,
+					data:{content:content},
+					dataType:"json",
+					success:function(data) {
+						if(data.status==1) {
+							alert("操作成功");
+							window.location.href = "/index.php?do=center";
+						} else if(data.status==2){
+							alert(data.code);
+						} else{
+							alert("操作失败");
+						}
+					}
+				});
+			}
+		}
+	</script>
+	</body>
+</html>

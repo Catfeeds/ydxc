@@ -1,0 +1,26 @@
+{/include file="header.html"/}
+	<body>
+		<!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+		<div class="container">
+			{/foreach from=$baoming_news item=item/}
+			<div class="row info">
+				<p class="col-xs-12">{/date("Y-m-d H:i:s",$item.inputtime)/}</p>
+				<div class="col-xs-12">
+					<h4>	学车报名</h4>
+					<p>{/$item.content/}</p>
+				</div>
+			</div>
+			{//foreach/}
+			{/foreach from=$tj_news item=item/}
+			<div class="row info">
+				<p class="col-xs-12">{/date("Y-m-d H:i:s",$item.inputtime)/}</p>
+				<div class="col-xs-12">
+					<h4>	体检申请</h4>
+					<p>{/$item.content/}</p>
+				</div>
+			</div>
+			{//foreach/}
+		</div>
+		
+	</body>
+</html>

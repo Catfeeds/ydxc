@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<LINK media=screen href="images/admin.css" type=text/css rel=stylesheet>
+<title>智能后台</title>
+</head>
+<body>
+<div class="showmessage" align="center">
+  <div class="ye_r_t">
+    <div class="ye_l_t">
+      <div class="ye_r_b">
+        <div class="ye_l_b">
+          <caption>
+          <h2>信息提示</h2>
+          </caption>
+          <p>{/$message/}</p>
+          <p class="op"> {/if $url_forward/} <a href="{/$url_forward/}">页面跳转中...</a> {/else/} <a href="javascript:history.back();">返回上一页</a> | <a href="module.php?ac=system&mod=admin">返回首页</a> {//if/} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

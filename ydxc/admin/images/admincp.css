@@ -1,0 +1,164 @@
+{
+	WORD-WRAP: break-word; outline: none
+}
+BODY {
+	BACKGROUND: #fff; TEXT-ALIGN: center
+}
+BODY {
+	FONT: 12px "Lucida Grande", Verdana, Lucida, Helvetica, Arial, "ËÎÌו", sans-serif; COLOR: #555
+}
+TD {
+	FONT: 12px "Lucida Grande", Verdana, Lucida, Helvetica, Arial, "ËÎÌו", sans-serif; COLOR: #555
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+UL {
+	LIST-STYLE-TYPE: none
+}
+H3 {
+	FONT-SIZE: 12px
+}
+H4 {
+	FONT-SIZE: 12px
+}
+A {
+	COLOR: #2366a8; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+EM {
+	FONT-WEIGHT: normal; FONT-STYLE: normal
+}
+TH {
+	FONT-WEIGHT: normal; FONT-STYLE: normal
+}
+TABLE {
+	BORDER-COLLAPSE: collapse
+}
+H3 {
+	FONT-SIZE: 14px; MARGIN-BOTTOM: 10px; COLOR: #09c
+}
+
+
+
+
+.mainhd {
+	BACKGROUND: url(../images/bg_repx.gif) repeat-x; OVERFLOW: hidden; LINE-HEIGHT: 88px; POSITION: relative; HEIGHT: 90px; TEXT-ALIGN: left
+}
+.logo {
+	BACKGROUND: url(../images/logo.png) no-repeat 15px 13px; WIDTH: 135px; TEXT-INDENT: -9999px; HEIGHT: 80px
+}
+.uinfo {
+	Z-INDEX: 4; RIGHT: 20px; LINE-HEIGHT: 32px; POSITION: absolute; TOP: 10px
+}
+.uinfo A {
+	COLOR: #666
+}
+.uinfo EM {
+	FONT-WEIGHT: 700; MARGIN-RIGHT: 5px
+}
+.uinfo EM A {
+	TEXT-DECORATION: underline
+}
+.uinfo P {
+	FLOAT: left
+}
+.btnlink A {
+	DISPLAY: block;  MARGIN-LEFT: 15px; WIDTH: 63px; HEIGHT: 32px; TEXT-ALIGN: center
+}
+.navbg {
+	Z-INDEX: 1; BACKGROUND: #f7fafd; LEFT: 153px; WIDTH: 6px; POSITION: absolute; TOP: 52px; HEIGHT: 37px
+}
+.nav {
+	Z-INDEX: 2; LEFT: 159px; WIDTH: 100%; POSITION: absolute; TOP: 14px; HEIGHT: 75px
+}
+.nav UL {
+	FONT-SIZE: 12px; Z-INDEX: 4; OVERFLOW: hidden; POSITION: relative
+}
+.nav LI {
+	BACKGROUND: url(../images/btn_block.gif) no-repeat right -115px; FLOAT: left; LINE-HEIGHT: 43px; HEIGHT: 43px
+}
+.nav LI EM {
+	DISPLAY: block
+}
+.nav LI A {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 12px; FONT-WEIGHT: normal; PADDING-BOTTOM: 5px; COLOR: #639bb0; PADDING-TOP: 5px
+}
+.nav LI A:hover {
+	COLOR: #09c; TEXT-DECORATION: none
+}
+.nav LI .diffcolor {
+	COLOR: #f60
+}
+.nav LI.navon {
+	BACKGROUND: url(../images/btn_block.gif) no-repeat; LINE-HEIGHT: 33px
+}
+.nav LI.navon EM {
+	DISPLAY: block; BACKGROUND: url(../images/btn_block.gif) no-repeat right -50px
+}
+.nav LI.navon EM A {
+	DISPLAY: block; BACKGROUND: url(../images/btn_block.gif) no-repeat center bottom; COLOR: #fff
+}
+.nav LI.navon EM A:hover {
+	COLOR: #fff
+}
+.navbd {
+	CLEAR: both; Z-INDEX: 3; BACKGROUND: #09c; OVERFLOW: hidden; WIDTH: 100%; POSITION: absolute; TOP: 38px; HEIGHT: 5px
+}
+
+
+
+
+.currentloca {
+	CLEAR: both; BORDER-LEFT: #b5cfd9 1px solid; HEIGHT: 32px
+}
+.currentloca P {
+	BORDER-TOP: #fff 5px solid; PADDING-LEFT: 10px; BACKGROUND: #f2f9fd; BORDER-LEFT: #fff 1px solid; LINE-HEIGHT: 25px; BORDER-BOTTOM: #fff 2px solid
+}
+.sitemapbtn {
+	RIGHT: 175px; LINE-HEIGHT: 100%; POSITION: absolute; TOP: 50px
+}
+.sitemapbtn SPAN {
+	MARGIN-RIGHT: 3px
+}
+.menutd {
+	BACKGROUND: url(bg_repx_h.gif) #f2f9fd no-repeat right top
+}
+.menu {
+	Z-INDEX: 20; WIDTH: 160px; POSITION: relative
+}
+.menu UL {
+	RIGHT: 5px; BACKGROUND: url(bg_repx_h.gif) #f2f9fd no-repeat 5px -20px; WIDTH: 153px; LIST-STYLE-TYPE: none; POSITION: absolute; TOP: 10px
+}
+.menu LI {
+	MARGIN: 0px; OVERFLOW: hidden; HEIGHT: 25px
+}
+.menu LI A {
+	PADDING-RIGHT: 0px; DISPLAY: block; PADDING-LEFT: 30px;  PADDING-BOTTOM: 3px; COLOR: #666; PADDING-TOP: 5px; TEXT-ALIGN: left
+}
+.menu LI A:hover {
+	 COLOR: #2366a8; TEXT-DECORATION: none
+}
+.menu LI A.tabon {
+	 COLOR: #2366a8; TEXT-DECORATION: none
+}
+.menu LI A.tabon:hover {
+	COLOR: #2366a8; TEXT-DECORATION: none
+}
+.mask {
+	BACKGROUND: url(../images/bg_repx_hb.gif) repeat-x; PADDING-TOP: 9px
+}

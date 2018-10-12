@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no" />
+        <title>预存学费</title>
+        <meta name="description" content="国内首家智能化学车平台盛大起航。" />
+        <meta name="keywords" content="国内首家智能化学车平台盛大起航。" />
+        <meta name="author" content="国内首家智能化学车平台盛大起航。" />
+        <link rel="stylesheet" type="text/css" href="public/css/self/reset.css" />
+        <link rel="stylesheet" type="text/css" href="public/css/libs/swiper-3.4.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="public/css/self/custom.css" />
+    </head>
+
+    <body ontouchstart>
+        <!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+
+        <div class="container zt4">
+        		<form action="" method="post" id="studentadd">
+            <div class="row form">
+                <div class="col-xs-12">
+                    <div class="form-item">
+                        <input type="text" name="yqm" id="" value="" placeholder="请输入邀请码" />
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-item">
+                        <input type="text" name="xm" id="" value="" placeholder="请输入姓名" />
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-item">
+                        <input type="text" name="phone" id="" value="" placeholder="请输入手机号" />
+                    </div>
+                </div>
+            </div>
+            </form>
+            <!--<div class="row record">
+                <a href="zt4-list.html">查看我的预存记录</a>
+            </div>-->
+            <div class="row explain">
+                <div class="col-xs-12">
+                    <h2>活动规则<strong>(请仔细阅读以下活动规则)</strong></h2>
+                    <p>
+                        <i>一、活动主题</i>
+                        <i>关注最美形象大使招募，投票心仪对象，预存学费，参与智能化学车，成为老司机！</i>
+                    </p>
+                    <p>
+                        <i>二、报名时间</i>
+                        <i>1. 预存时间：2017年7月1日-2017年8月30日止</i>
+                        <i>2. 报名时间：2017年9月1日-2017年9月15日报名有效</i>
+                    </p>
+                    <p>
+                        <i>三、活动规则</i>
+                        <i>1. 所有未学车人士均可参与本次活动，预存100元，在规定时间内报名抵扣现金学费200元，抵扣现金仅作为报名学费抵扣，超出报名时间未报名属于无效。</i>
+                        <i>2. 预存学费填写个人信息及邀请码。凡参与最美形象代言人投票及参与预存学费活动分享朋友圈集赞50个，保存截图，即可换取智能化学车平台精美礼品一份，仅限前100名，送完即止。</i>
+                    </p>
+                    <p><strong>注：本活动最终解释权归重庆翼点信息科技有限公司所有</strong></p>
+                </div>
+            </div>
+        </div>
+        <div class="fix-btn">
+            <a class="fix-btn-call" href="tel:4006898909"><span>咨询热线</span><span>400-6898-909</span></a>
+            <a class="fix-btn-go" href="javascript:unorderpay()">预存100 立即支付</a>
+        </div>
+
+        <script src="public/js/libs/jquery-2.2.3.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/libs/swiper-3.4.1.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="public/js/self/custom.js" type="text/javascript" charset="utf-8"></script>
+        <script type="application/javascript">
+        		$(function () {
+            });
+
+            function unorderpay() {
+            		$.ajax({
+					type: 'GET',
+					url: '/s_user/student.php?method=unifiedorder',
+					data:$("#studentadd").serialize(),
+					dataType: 'json',
+					success: function(data){
+						//alert(data);
+						if (1 == data.code) {
+			            		wx.config({
+							    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+							    appId:     data.content.appId, // 必填，公众号的唯一标识
+							    timestamp: data.content.timestamp, // 必填，生成签名的时间戳
+							    nonceStr: data.content.nonceStr, // 必填，生成签名的随机串
+							    signature: data.content.signature,// 必填，签名，见附录1
+							    jsApiList: ['chooseWXPay','onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+							});
+							var title = "易点学车";
+							var link = "http://ydxc.yooyor.com/client/";
+							var imgUrl = "http://ydxc.yooyor.com/client/";
+							var desc = "易点学车";
+							var type = "";
+							var dataUrl = "";
+			            		wx.ready(function(){
+
+								wx.chooseWXPay({
+								           appId : data.content.appId ,     //公众号名称，由商户传入
+								           timestamp :  data.content.timestamp,         //时间戳，自1970年以来的秒数
+								           nonceStr : data.content.nonceStr, //随机串
+								           package : data.content.package,
+								           signType : "MD5",         //微信签名方式：
+								           paySign : data.content.paySign, //微信签名
+									       success: function (res){
+											 	alert('支付成功！');
+											 	window.location.reload();
+									       }
+								});
+			            		});
+			            		
+							localStorage.hurl = "";
+						} else {
+							localStorage.hurl = window.location.href;
+							window.location.href="/client/getinfo.php";
+						}
+					},
+					error:function(data) {
+						//layer.msg('删除失败!',{icon:1,time:1000});;
+					},
+				});
+            }
+
+        </script>
+    </body>
+
+</html>

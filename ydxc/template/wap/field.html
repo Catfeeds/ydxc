@@ -1,0 +1,134 @@
+{/include file="header.html"/}
+	<body>
+		<!--[if lt IE 9]>对不起，浏览器版本太低~！<![endif]-->
+		<div class="container">
+			<div class="row map-wrap">
+				<div class="col-xs-12">
+					<a class="map-k3" style="color: #FFFFFF;{/if $k==3/}background: #d81e06;{//if/}" href="/index.php?do=xlc_map&k=3">科三</a>
+					<a class="map-k2" style="color: #FFFFFF;{/if $k==2/}background: #d81e06;{//if/}" href="/index.php?do=xlc_map&k=2">科二</a>
+					<a class="map-tj" style="color: #FFFFFF;{/if $tj==1/}background: #d81e06;{//if/}" href="/index.php?do=xlc_map&tj=1">体检</a>
+					<!--<a class="map-dh" style="color: #FFFFFF;" {/if !empty($cd_info.id)/} href="/index.php?do=go&id={/$cd_info.id/}"{//if/}>
+							<i class="iconfont icon-quzheli"></i>
+							<p>到这里</p>
+					</a>-->
+				</div>	
+			</div>
+			<div class="row map" id="allmap">
+			</div>
+			
+			<div id="info"></div>
+			
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+		
+	$(function () {
+		
+			wx.ready(function(){
+				wx.getLocation({
+				    type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+				    success: function (res) {
+				        var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+				        var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+				        var speed = res.speed; // 速度，以米/每秒计
+				        var accuracy = res.accuracy; // 位置精度
+				        
+				        // 百度地图API功能
+						var map = new BMap.Map("allmap");    // 创建Map实例
+						var point = new BMap.Point(longitude, latitude);  //当前位置
+						
+						map.centerAndZoom(new BMap.Point(longitude, latitude), 11);  // 初始化地图,设置中心点坐标和地图级别
+						map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+						map.setCurrentCity("重庆");          // 设置地图显示的城市 此项是必须设置的
+						map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+						
+						var mapType1 = new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]});
+						map.removeControl(mapType1);
+						var mapType2 = new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_LEFT});
+						map.removeControl(mapType2);   //移除地图，三维，卫星图
+						
+						//创建图片
+						{/foreach from=$newsshow item=item key=key/}
+						var pt{/$key/} = new BMap.Point({/$item.lng/},{/$item.lat/});
+						{/if $item.class_id==5/}
+						var myIcon{/$key/} = new BMap.Icon("/template/wap/img/drive.png", new BMap.Size(20,20));
+						{/else/}
+						var myIcon{/$key/} = new BMap.Icon("/template/wap/img/hospital.png", new BMap.Size(20,20));
+						{//if/}
+						myIcon{/$key/}.imageSize = new BMap.Size(20,20);
+						var marker{/$key/} = new BMap.Marker(pt{/$key/},{icon:myIcon{/$key/}});  // 创建标注
+						marker{/$key/}.addEventListener("click",getAttr{/$key/});
+						function getAttr{/$key/}(){
+							{/if $item.class_id==5/}
+							$.ajax({
+								url:'/index.php?do=xlc_map_ajax&id={/$item.id/}&k={/$k/}&tj={/$tj/}',
+								type:'get',
+								data:'loca='+latitude+','+longitude,
+								dataType:'html',
+								error: function() {
+									alert('error');
+								},
+								success: function(data) {
+									$('#info').html(data);
+								}
+							});
+//							window.location.href = "/index.php?do=physical&id={/$item.id/}&k={/$k/}&tj={/$tj/}";
+//							$.ajax({
+//								url:'/index.php?do=xlc_map_ajax&id={/$item.id/}&k={/$k/}&tj={/$tj/}',
+//								type:'get',
+//								dataType:'html',
+//								error: function() {
+//									alert('error');
+//								},
+//								success: function(data) {
+//									alert('success');
+//									//$('#div').html(data);
+//								}
+//							});
+							{/else/}
+//							window.location.href = "/index.php?do=xlc_map&id={/$item.id/}&k={/$k/}&tj={/$tj/}";
+							$.ajax({
+								url:'/index.php?do=physical&id={/$item.id/}&k={/$k/}&tj={/$tj/}',
+								type:'get',
+								dataType:'html',
+								error: function() {
+									alert('error');
+								},
+								success: function(data) {
+									$('#info').html(data);
+								}
+							});
+							{//if/}
+						}
+						map.addOverlay(marker{/$key/});              // 将标注添加到地图中
+						{//foreach/}
+						
+						//坐标转换完之后的回调函数
+					    translateCallback = function (data){
+					      if(data.status === 0) {
+					        map.setCenter(data.points[0]);
+							var d_json = data.points;
+							var d_str = JSON.stringify(d_json);
+							var l = jQuery.parseJSON(d_str);
+							var my_lng = l[0].lng;
+							var my_lat = l[0].lat;
+							var my_loc = new BMap.Point(my_lng, my_lat);
+							var myIc = new BMap.Icon("/template/wap/img/dw.png", new BMap.Size(30,30));
+							myIc.imageSize = new BMap.Size(30,30);
+							var my_marker = new BMap.Marker(my_loc,{icon:myIc});
+							map.addOverlay(my_marker);
+					      }
+					    }
+					    setTimeout(function(){
+					        var convertor = new BMap.Convertor();
+					        var pointArr = [];
+					        pointArr.push(point);
+					        convertor.translate(pointArr, 1, 5, translateCallback)
+					    }, 1000);
+				    }
+				});
+			});
+	});
+</script>

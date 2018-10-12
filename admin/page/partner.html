@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta name="keywords" content="scclui框架">
+	<meta name="description" content="scclui为轻量级的网站后台管理系统模版。">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="stylesheet" type="text/css" href="/admin/common/css/bootstrap.min.css" />
+    <title>首页</title>
+    
+  </head>
+  
+  <body>
+	<table class="table">
+		<thead>
+			<th>
+				序号
+			</th>
+			<th>
+				姓名
+			</th>
+			<th>
+				电话
+			</th>
+			<th>
+				时间
+			</th>
+		</thead>
+		<tbody id='stulist'>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript" src="../common/lib/jquery-1.9.0.min.js"></script>
+	<script >
+		$(function(){
+			$.ajax({
+					type: 'GET',
+					url: '/s_user/partner.php?method=getlist&keyword=',//+keyword,
+					dataType: 'json',
+					success: function(data){
+						var listhtml = "";
+						$.each(data.content.list, function(index, item) {
+							listhtml += '<tr>'+
+											'<td>' + (index+1) + '</td>'+
+											'<td>' + item.xm + '</td>'+
+											'<td>' + item.phone + '</td>'+
+											'<td>' + item.addtime + '</td>'+
+										'</tr>';
+							
+						});
+						$("#stulist").html(listhtml);
+					},
+					error:function(data) {
+						//layer.msg('删除失败!',{icon:1,time:1000});;
+					}
+			});
+		});
+	</script>
+  </body>
+</html>

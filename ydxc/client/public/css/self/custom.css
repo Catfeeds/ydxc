@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+/*
+ * Created by Yan on 2016年6月15日15:37:43.
+ * ========================
+ * 自定义
+ * ========================
+*/
+
+html,
+body {
+    /*height: 100%;*/
+}
+
+body {
+    background-color: #F2F2F2;
+    /*padding-bottom: 65px;*/
+}
+
+.index {
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+.zt1 {
+    padding: 0;
+}
+
+.zt1 img {
+    width: 100%;
+}
+
+.zt2 {}
+
+.zt3 {}
+
+.zt4 {}
+
+.form {
+    background-color: #FFF;
+}
+
+.form-item {
+    overflow: hidden;
+    border-bottom: 1px solid #F2F2F2;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.form-item-file-wrap {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.form-item-file {
+    width: 33.333333%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/*.form-item-file:before {
+    content: '+';
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 10px;
+    left: 5px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 3rem;
+    background-color: #22A7F0;
+    color: #FFF;
+}*/
+
+.form-item input {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+}
+
+.form-item input[type="text"] {
+    padding: 3px 0;
+}
+
+.form-item input[type="file"] {
+    height: 60px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+}
+
+.form-item-file img {
+    width: 100%;
+}
+
+.form-item-file-upload {
+    position: relative;
+}
+
+.form-item-file-cover {
+    position: relative;
+}
+
+.form-item-file-cover-dele {
+    margin-top: 5px;
+    color: #22A7F0;
+    font-size: 1rem;
+}
+
+.fix-btn {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFF;
+    display: flex;
+    border-top: 1px solid #F2F2F2;
+}
+
+.fix-btn-call {
+    padding: 8px 0;
+    width: 40%;
+    text-align: center;
+}
+
+.fix-btn-call span {
+    display: block;
+    color: #22A7F0;
+}
+
+.fix-btn-go {
+    flex: 1;
+    text-align: center;
+    color: #FFF;
+    background-color: #22A7F0;
+    line-height: 50px;
+    font-size: 1.6rem;
+    font-weight: normal;
+}
+
+.fix-btn-go:active {
+    color: #FFF;
+    background-color: #1A81BA;
+}
+
+.explain {
+    background-color: #FFF;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.explain h2 {
+    font-size: 1.6rem;
+    border-bottom: 1px solid #F2F2F2;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.explain h2 strong {
+    color: #F00;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.explain p {
+    margin-top: 10px;
+}
+
+.explain p strong {
+    color: #F00;
+}
+
+.explain p i {
+    display: block;
+    margin-top: 5px;
+}
+
+.record {
+    background-color: #FFF;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.record a {
+    padding: 10px 15px;
+    font-size: 1.6rem;
+    display: block;
+    position: relative;
+}
+
+.record a:active {
+    background-color: #F8F8F8;
+}
+
+.record a:after {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 14px;
+    height: 14px;
+    margin-top: -7px;
+    content: ' ';
+    border-top: 1px solid #EEE;
+    border-right: 1px solid #EEE;
+    transform: rotate(45deg);
+}
+
+.record-list {
+    background-color: #fff;
+    border-bottom: 1px solid #F2F2F2;
+}
+
+.record-list .col-xs-7 {
+    padding-top: 8px;
+}
+
+.record-list .col-xs-5 {
+    text-align: right;
+}
+
+.record-list h2 {
+    font-size: 1.8rem;
+}
+
+.record-list span {
+    color: #888;
+}
+
+.record-list strong {
+    line-height: 60px;
+    color: #22A7F0;
+    font-size: 1.8rem;
+    font-weight: normal;
+}

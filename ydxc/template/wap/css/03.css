@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+.body{padding:0px;
+margin:0px;
+border:0px;}
+.daohang{background:#af251c;
+width:100%;
+height:58px;}
+.box{width:100%;
+height:100%;}
+.box1{height:92px;
+background:#ffffff;}
+.box2{height:28px;
+background:#d1d7da;}
+.box3{background:#f9f4f4;
+width:100%;}
+.fanhui{width:66px;
+height:56px;
+padding-bottom:8px;
+padding-left:24px;
+padding-right:0px;
+padding-top:8px;}
+.shouye{
+padding-bottom:8px;
+padding-left:2px;
+padding-right:0px;
+padding-top:6px;}
+.jiaxiao{width:184px;
+height:58px;
+padding-bottom:8px;
+padding-left:28px;
+padding-right:0px;
+padding-top:20px;}
+.zi{padding-left:24px;}
+
+.lianxi font{
+	font-size:25px;
+}
+a:link{text-decoration:none;}
